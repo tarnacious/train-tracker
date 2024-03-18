@@ -1,0 +1,38 @@
+{
+    "njFrom": 8098160,
+    "njDep": 1710783780000,
+    "njTo": 8700011,
+    "maxChanges": 0,
+    "filter": {
+        "njTrain": "NJ 40424",
+        "njDeparture": 1710783780000
+    },
+    "objects": [
+        {
+            "type": "person",
+            "gender": "male",
+            "birthDate": "2016-03-17",
+            "cards": []
+        },
+        {
+            "type": "person",
+            "gender": "male",
+            "birthDate": "2016-03-17",
+            "cards": []
+        },
+        {
+            "type": "person",
+            "gender": "female",
+            "birthDate": "1994-03-17",
+            "cards": []
+        },
+        {
+            "type": "person",
+            "gender": "male",
+            "birthDate": "1994-03-17",
+            "cards": []
+        }
+    ],
+    "relations": [],
+    "lang": "de"
+}

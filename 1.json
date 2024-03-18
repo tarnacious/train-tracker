@@ -1,0 +1,1627 @@
+{
+    "result": [
+        {
+            "connections": [
+                {
+                    "sections": [
+                        {
+                            "departureTimestamp": "2024-05-06T20:18:00+02:00",
+                            "arrivalTimestamp": "2024-05-07T10:24:00+02:00",
+                            "passlist": [
+                                {
+                                    "name": "Berlin Hbf (Tiefgescho\u00df)",
+                                    "stationNumber": 8098160,
+                                    "departure": "2024-05-06T20:18:00+02:00",
+                                    "departureAccessExitAmendable": true,
+                                    "departurePlatform": "1",
+                                    "stopState": [
+                                        "DEP_PROGNOSED"
+                                    ],
+                                    "gpsCoordinates": [
+                                        52525589,
+                                        13369549
+                                    ]
+                                },
+                                {
+                                    "name": "Berlin S\u00fcdkreuz",
+                                    "stationNumber": 8011113,
+                                    "departure": "2024-05-06T20:26:00+02:00",
+                                    "arrival": "2024-05-06T20:23:00+02:00",
+                                    "arrivalAccessExitAmendable": false,
+                                    "departureAccessExitAmendable": true,
+                                    "departurePlatform": "3",
+                                    "gpsCoordinates": [
+                                        52475043,
+                                        13365315
+                                    ]
+                                },
+                                {
+                                    "name": "Halle(Saale)Hbf",
+                                    "stationNumber": 8010159,
+                                    "departure": "2024-05-06T22:18:00+02:00",
+                                    "arrival": "2024-05-06T22:16:00+02:00",
+                                    "arrivalAccessExitAmendable": true,
+                                    "arrivalPlatform": "6",
+                                    "departureAccessExitAmendable": true,
+                                    "departurePlatform": "6",
+                                    "gpsCoordinates": [
+                                        51477510,
+                                        11987088
+                                    ]
+                                },
+                                {
+                                    "name": "Erfurt Hbf",
+                                    "stationNumber": 8010101,
+                                    "departure": "2024-05-06T23:36:00+02:00",
+                                    "arrival": "2024-05-06T23:34:00+02:00",
+                                    "arrivalAccessExitAmendable": true,
+                                    "arrivalPlatform": "9",
+                                    "departureAccessExitAmendable": true,
+                                    "departurePlatform": "9",
+                                    "gpsCoordinates": [
+                                        50972550,
+                                        11038502
+                                    ]
+                                },
+                                {
+                                    "name": "Frankfurt(Main)S\u00fcd",
+                                    "stationNumber": 8002041,
+                                    "departure": "2024-05-07T02:12:00+02:00",
+                                    "arrival": "2024-05-07T02:10:00+02:00",
+                                    "arrivalAccessExitAmendable": true,
+                                    "arrivalPlatform": "7",
+                                    "departureAccessExitAmendable": true,
+                                    "departurePlatform": "7",
+                                    "gpsCoordinates": [
+                                        50099365,
+                                        8686456
+                                    ]
+                                },
+                                {
+                                    "name": "Mannheim Hbf",
+                                    "stationNumber": 8000244,
+                                    "departure": "2024-05-07T04:20:00+02:00",
+                                    "arrival": "2024-05-07T03:05:00+02:00",
+                                    "arrivalAccessExitAmendable": false,
+                                    "departureAccessExitAmendable": false,
+                                    "gpsCoordinates": [
+                                        49479352,
+                                        8468917
+                                    ]
+                                },
+                                {
+                                    "name": "Kehl(Gr)",
+                                    "stationNumber": 8000008,
+                                    "departure": "2024-05-07T05:40:00+02:00",
+                                    "arrival": "2024-05-07T05:40:00+02:00",
+                                    "arrivalAccessExitAmendable": false,
+                                    "departureAccessExitAmendable": false,
+                                    "gpsCoordinates": [
+                                        48575648,
+                                        7801118
+                                    ]
+                                },
+                                {
+                                    "name": "Strasbourg",
+                                    "stationNumber": 8700023,
+                                    "departure": "2024-05-07T05:50:00+02:00",
+                                    "arrival": "2024-05-07T05:44:00+02:00",
+                                    "arrivalAccessExitAmendable": true,
+                                    "departureAccessExitAmendable": false,
+                                    "gpsCoordinates": [
+                                        48585339,
+                                        7734067
+                                    ]
+                                },
+                                {
+                                    "name": "Paris Est",
+                                    "stationNumber": 8700011,
+                                    "arrival": "2024-05-07T10:24:00+02:00",
+                                    "arrivalAccessExitAmendable": true,
+                                    "stopState": [
+                                        "ARR_PROGNOSED"
+                                    ],
+                                    "gpsCoordinates": [
+                                        48876976,
+                                        2359120
+                                    ]
+                                }
+                            ],
+                            "attributes": [
+                                {
+                                    "attributeType": "operator",
+                                    "range": [
+                                        0,
+                                        8
+                                    ],
+                                    "value": "DPN",
+                                    "svalue": "DPN",
+                                    "lvalue": "Nahreisezug"
+                                },
+                                {
+                                    "attributeType": "operator_id",
+                                    "range": [
+                                        0,
+                                        8
+                                    ],
+                                    "value": "81"
+                                },
+                                {
+                                    "attributeType": "pclass",
+                                    "range": [
+                                        0,
+                                        8
+                                    ],
+                                    "value": 3
+                                },
+                                {
+                                    "attributeType": "intcat",
+                                    "range": [
+                                        0,
+                                        8
+                                    ],
+                                    "value": "NJ"
+                                },
+                                {
+                                    "attributeType": "cat",
+                                    "range": [
+                                        0,
+                                        8
+                                    ],
+                                    "value": "NJ      ",
+                                    "svalue": "NJ",
+                                    "lvalue": "nightjet",
+                                    "code": "3"
+                                },
+                                {
+                                    "attributeType": "name",
+                                    "range": [
+                                        0,
+                                        8
+                                    ],
+                                    "value": "NJ 40424"
+                                },
+                                {
+                                    "attributeType": "num",
+                                    "range": [
+                                        0,
+                                        8
+                                    ],
+                                    "value": "40424"
+                                },
+                                {
+                                    "attributeType": "intnum",
+                                    "range": [
+                                        0,
+                                        8
+                                    ],
+                                    "value": 40424
+                                },
+                                {
+                                    "attributeType": "generic",
+                                    "range": [
+                                        0,
+                                        8
+                                    ],
+                                    "value": "Reservierungspflicht",
+                                    "code": "RP",
+                                    "priority": 1
+                                },
+                                {
+                                    "attributeType": "generic",
+                                    "range": [
+                                        0,
+                                        8
+                                    ],
+                                    "value": "Rollstuhlstellplatz",
+                                    "code": "RO",
+                                    "priority": 150
+                                },
+                                {
+                                    "attributeType": "generic",
+                                    "range": [
+                                        0,
+                                        8
+                                    ],
+                                    "value": "Rollstuhlstellplatz - Voranmeldung unter +43 5 1717",
+                                    "code": "OA",
+                                    "priority": 150
+                                },
+                                {
+                                    "attributeType": "generic",
+                                    "range": [
+                                        0,
+                                        8
+                                    ],
+                                    "value": "rollstuhltaugliches WC",
+                                    "code": "OC",
+                                    "priority": 150
+                                },
+                                {
+                                    "attributeType": "generic",
+                                    "range": [
+                                        0,
+                                        8
+                                    ],
+                                    "value": "in Sitzwagen nur 2. Klasse",
+                                    "code": "J2",
+                                    "priority": 300
+                                },
+                                {
+                                    "attributeType": "generic",
+                                    "range": [
+                                        0,
+                                        8
+                                    ],
+                                    "value": "\u00d6BB Nightjet (www.nightjet.com)",
+                                    "code": "OJ",
+                                    "priority": 320
+                                },
+                                {
+                                    "attributeType": "generic",
+                                    "range": [
+                                        0,
+                                        8
+                                    ],
+                                    "value": "Komfortticket (IRT Integrated Reservation Ticket)",
+                                    "code": "CT",
+                                    "priority": 320
+                                },
+                                {
+                                    "attributeType": "generic",
+                                    "range": [
+                                        0,
+                                        8
+                                    ],
+                                    "value": "Schlafwagen",
+                                    "code": "SW",
+                                    "priority": 400
+                                },
+                                {
+                                    "attributeType": "generic",
+                                    "range": [
+                                        0,
+                                        8
+                                    ],
+                                    "value": "Liegewagen",
+                                    "code": "LW",
+                                    "priority": 400
+                                },
+                                {
+                                    "attributeType": "generic",
+                                    "range": [
+                                        0,
+                                        8
+                                    ],
+                                    "value": "Imbiss und Getr\u00e4nke beim Schlaf-/Liegewagenbetreuer erh\u00e4ltlich",
+                                    "code": "MN",
+                                    "priority": 450
+                                },
+                                {
+                                    "attributeType": "generic",
+                                    "range": [
+                                        0,
+                                        8
+                                    ],
+                                    "value": "Hinweis: Fahrzeiten k\u00f6nnen sich noch \u00e4ndern.",
+                                    "code": "s1",
+                                    "priority": 921
+                                },
+                                {
+                                    "attributeType": "generic",
+                                    "range": [
+                                        0,
+                                        8
+                                    ],
+                                    "value": "nightjet",
+                                    "code": "ZN",
+                                    "priority": 100
+                                },
+                                {
+                                    "attributeType": "info",
+                                    "range": [
+                                        0,
+                                        8
+                                    ],
+                                    "value": "Paris Est",
+                                    "code": "RL"
+                                },
+                                {
+                                    "attributeType": "dir",
+                                    "range": [
+                                        0,
+                                        8
+                                    ],
+                                    "value": "Paris Est"
+                                }
+                            ],
+                            "i": 0,
+                            "transportType": "journey"
+                        }
+                    ],
+                    "offers": [
+                        {
+                            "name": "Standard-Ticket inkl. Reservierung",
+                            "productType": "CONNECTION",
+                            "partialOffer": false,
+                            "productDetails": [
+                                {
+                                    "scope": [
+                                        [
+                                            0,
+                                            0,
+                                            0,
+                                            8
+                                        ]
+                                    ],
+                                    "title": "ARES Standard-Ticket  Nachtverkehr NP",
+                                    "name": {
+                                        "de": "Standard-Ticket inkl. Reservierung",
+                                        "en": "Standard-Ticket inkl. Reservierung",
+                                        "it": "Standard-Ticket inkl. Reservierung"
+                                    },
+                                    "validityPeriodFrom": "2024-05-06T20:18:00+02:00",
+                                    "validityPeriodTo": "2024-05-07T10:24:00+02:00",
+                                    "globallyPriced": true,
+                                    "objects": [
+                                        {
+                                            "index": 0,
+                                            "priceClass2": 44.9
+                                        },
+                                        {
+                                            "index": 1,
+                                            "priceClass2": 44.9
+                                        },
+                                        {
+                                            "index": 2,
+                                            "priceClass2": 89.9
+                                        },
+                                        {
+                                            "index": 3,
+                                            "priceClass2": 89.9
+                                        }
+                                    ],
+                                    "prodGroupLabels": [
+                                        "918 1 Reservierung Default",
+                                        "Vollstorno",
+                                        "Zugbindung",
+                                        "eineFahrt",
+                                        "featured"
+                                    ],
+                                    "validityType": "oneway"
+                                }
+                            ],
+                            "reservation": {
+                                "reservationSegments": [
+                                    {
+                                        "scope": [
+                                            0,
+                                            0,
+                                            0,
+                                            8
+                                        ],
+                                        "compartments": [
+                                            {
+                                                "externalIdentifier": "couchette4",
+                                                "accommodationType": "LE",
+                                                "special": false,
+                                                "objects": [
+                                                    {
+                                                        "index": 0,
+                                                        "price": 94.9,
+                                                        "reservability": "RP"
+                                                    },
+                                                    {
+                                                        "index": 1,
+                                                        "price": 94.9,
+                                                        "reservability": "RP"
+                                                    },
+                                                    {
+                                                        "index": 2,
+                                                        "price": 179.9,
+                                                        "reservability": "RP"
+                                                    },
+                                                    {
+                                                        "index": 3,
+                                                        "price": 179.9,
+                                                        "reservability": "RP"
+                                                    }
+                                                ],
+                                                "id": 3756464,
+                                                "accommodationClass": [
+                                                    "class2"
+                                                ],
+                                                "name": {
+                                                    "de": "Abteil f\u00fcr 4 Personen",
+                                                    "en": "Compartment for 4 passengers",
+                                                    "fr": ".",
+                                                    "it": "scompartimento per 4 persone"
+                                                },
+                                                "freeFollowupReservationApplied": false,
+                                                "spotLocations": [],
+                                                "surchargePrice": 280,
+                                                "capacity": 4
+                                            },
+                                            {
+                                                "externalIdentifier": "couchette6",
+                                                "accommodationType": "LE",
+                                                "special": false,
+                                                "objects": [
+                                                    {
+                                                        "index": 0,
+                                                        "price": 79.9,
+                                                        "reservability": "RP"
+                                                    },
+                                                    {
+                                                        "index": 1,
+                                                        "price": 79.9,
+                                                        "reservability": "RP"
+                                                    },
+                                                    {
+                                                        "index": 2,
+                                                        "price": 154.9,
+                                                        "reservability": "RP"
+                                                    },
+                                                    {
+                                                        "index": 3,
+                                                        "price": 154.9,
+                                                        "reservability": "RP"
+                                                    }
+                                                ],
+                                                "id": 3756468,
+                                                "accommodationClass": [
+                                                    "class2"
+                                                ],
+                                                "name": {
+                                                    "de": "Abteil f\u00fcr 6 Personen",
+                                                    "en": "Compartment for 6 passengers",
+                                                    "fr": ".",
+                                                    "it": "scompartimento per 6 persone"
+                                                },
+                                                "freeFollowupReservationApplied": false,
+                                                "spotLocations": [],
+                                                "surchargePrice": 200,
+                                                "capacity": 6
+                                            },
+                                            {
+                                                "externalIdentifier": "double",
+                                                "accommodationType": "BE",
+                                                "special": false,
+                                                "objects": [
+                                                    {
+                                                        "index": 0,
+                                                        "price": 149.9,
+                                                        "reservability": "RP"
+                                                    },
+                                                    {
+                                                        "index": 1,
+                                                        "price": 149.9,
+                                                        "reservability": "RP"
+                                                    },
+                                                    {
+                                                        "index": 2,
+                                                        "price": 284.9,
+                                                        "reservability": "RP"
+                                                    },
+                                                    {
+                                                        "index": 3,
+                                                        "price": 284.9,
+                                                        "reservability": "RP"
+                                                    }
+                                                ],
+                                                "id": 3756880,
+                                                "accommodationClass": [
+                                                    "class2"
+                                                ],
+                                                "name": {
+                                                    "de": "Abteil f\u00fcr 2 Personen (Double)",
+                                                    "en": "Compartment for 2 passengers (Double)",
+                                                    "fr": ".",
+                                                    "it": "scompartimento per 2 persone (Double)"
+                                                },
+                                                "freeFollowupReservationApplied": false,
+                                                "spotLocations": [],
+                                                "surchargePrice": 600,
+                                                "capacity": 2
+                                            },
+                                            {
+                                                "externalIdentifier": "T3",
+                                                "accommodationType": "BE",
+                                                "special": false,
+                                                "objects": [
+                                                    {
+                                                        "index": 0,
+                                                        "price": 119.9,
+                                                        "reservability": "RP"
+                                                    },
+                                                    {
+                                                        "index": 1,
+                                                        "price": 119.9,
+                                                        "reservability": "RP"
+                                                    },
+                                                    {
+                                                        "index": 2,
+                                                        "price": 229.9,
+                                                        "reservability": "RP"
+                                                    },
+                                                    {
+                                                        "index": 3,
+                                                        "price": 229.9,
+                                                        "reservability": "RP"
+                                                    }
+                                                ],
+                                                "id": 3756913,
+                                                "accommodationClass": [
+                                                    "class2"
+                                                ],
+                                                "name": {
+                                                    "de": "Abteil f\u00fcr 3 Personen (Triple)",
+                                                    "en": "Compartment for 3 passengers (Triple)",
+                                                    "fr": ".",
+                                                    "it": "scompartimento per 3 persone (Triple)"
+                                                },
+                                                "freeFollowupReservationApplied": false,
+                                                "spotLocations": [],
+                                                "surchargePrice": 430,
+                                                "capacity": 3
+                                            },
+                                            {
+                                                "externalIdentifier": "privateCouchette",
+                                                "accommodationType": "LE",
+                                                "special": false,
+                                                "privateVariations": [
+                                                    {
+                                                        "count": 1,
+                                                        "allocations": [
+                                                            {
+                                                                "objects": [
+                                                                    {
+                                                                        "index": 0,
+                                                                        "price": 0
+                                                                    },
+                                                                    {
+                                                                        "index": 1,
+                                                                        "price": 0
+                                                                    },
+                                                                    {
+                                                                        "index": 2,
+                                                                        "price": 604.9
+                                                                    },
+                                                                    {
+                                                                        "index": 3,
+                                                                        "price": 0
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "surchargePrice": 335.3
+                                                    },
+                                                    {
+                                                        "count": 2,
+                                                        "allocations": [
+                                                            {
+                                                                "objects": [
+                                                                    {
+                                                                        "index": 0,
+                                                                        "price": 0
+                                                                    },
+                                                                    {
+                                                                        "index": 2,
+                                                                        "price": 604.9
+                                                                    }
+                                                                ]
+                                                            },
+                                                            {
+                                                                "objects": [
+                                                                    {
+                                                                        "index": 1,
+                                                                        "price": 0
+                                                                    },
+                                                                    {
+                                                                        "index": 3,
+                                                                        "price": 604.9
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "surchargePrice": 940.2
+                                                    }
+                                                ],
+                                                "id": 5000057,
+                                                "accommodationClass": [
+                                                    "class2"
+                                                ],
+                                                "name": {
+                                                    "de": "Privatabteil im Liegewagen f\u00fcr bis zu 6 Personen",
+                                                    "en": "Private compartment for up to 6 passengers in a couchette coach",
+                                                    "fr": ".",
+                                                    "it": "Scompartimento privato in carrozza cuccette per 6 passeggeri al massimo"
+                                                },
+                                                "freeFollowupReservationApplied": false,
+                                                "spotLocations": [],
+                                                "capacity": 6,
+                                                "privateCompartmentContainsSubcompartments": false
+                                            },
+                                            {
+                                                "externalIdentifier": "privateSeat",
+                                                "accommodationType": "SE",
+                                                "special": false,
+                                                "privateVariations": [
+                                                    {
+                                                        "count": 2,
+                                                        "allocations": [
+                                                            {
+                                                                "objects": [
+                                                                    {
+                                                                        "index": 2,
+                                                                        "price": 424.9
+                                                                    }
+                                                                ]
+                                                            },
+                                                            {
+                                                                "objects": [
+                                                                    {
+                                                                        "index": 0,
+                                                                        "price": 0
+                                                                    },
+                                                                    {
+                                                                        "index": 1,
+                                                                        "price": 0
+                                                                    },
+                                                                    {
+                                                                        "index": 3,
+                                                                        "price": 424.9
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "surchargePrice": 580.2
+                                                    }
+                                                ],
+                                                "id": 5000059,
+                                                "accommodationClass": [
+                                                    "class2"
+                                                ],
+                                                "name": {
+                                                    "de": "Privatabteil im Sitzwagen 2. Klasse",
+                                                    "en": "Private compartment in a 2nd class seated coach",
+                                                    "fr": ".",
+                                                    "it": "Scompartimento privato in carrozza con posti a sedere, 2a classe"
+                                                },
+                                                "freeFollowupReservationApplied": false,
+                                                "spotLocations": [],
+                                                "capacity": 6,
+                                                "privateCompartmentContainsSubcompartments": false
+                                            },
+                                            {
+                                                "externalIdentifier": "femaleCouchette4",
+                                                "accommodationType": "LE",
+                                                "special": false,
+                                                "objects": [
+                                                    {
+                                                        "index": 0,
+                                                        "price": 94.9,
+                                                        "reservability": "RP"
+                                                    },
+                                                    {
+                                                        "index": 1,
+                                                        "price": 94.9,
+                                                        "reservability": "RP"
+                                                    },
+                                                    {
+                                                        "index": 2,
+                                                        "price": 179.9,
+                                                        "reservability": "RP"
+                                                    },
+                                                    {
+                                                        "index": 3,
+                                                        "price": 179.9,
+                                                        "reservability": "RP"
+                                                    }
+                                                ],
+                                                "id": 5000068,
+                                                "accommodationClass": [
+                                                    "class2"
+                                                ],
+                                                "name": {
+                                                    "de": "Damenabteil f\u00fcr 4 Personen",
+                                                    "en": "Ladies only compartment for 4 passengers",
+                                                    "fr": ".",
+                                                    "it": "scompartimento donna per 4 persone"
+                                                },
+                                                "freeFollowupReservationApplied": false,
+                                                "spotLocations": [],
+                                                "surchargePrice": 280,
+                                                "capacity": 4
+                                            },
+                                            {
+                                                "externalIdentifier": "femaleCouchette6",
+                                                "accommodationType": "LE",
+                                                "special": false,
+                                                "objects": [
+                                                    {
+                                                        "index": 0,
+                                                        "price": 79.9,
+                                                        "reservability": "RP"
+                                                    },
+                                                    {
+                                                        "index": 1,
+                                                        "price": 79.9,
+                                                        "reservability": "RP"
+                                                    },
+                                                    {
+                                                        "index": 2,
+                                                        "price": 154.9,
+                                                        "reservability": "RP"
+                                                    },
+                                                    {
+                                                        "index": 3,
+                                                        "price": 154.9,
+                                                        "reservability": "RP"
+                                                    }
+                                                ],
+                                                "id": 5000069,
+                                                "accommodationClass": [
+                                                    "class2"
+                                                ],
+                                                "name": {
+                                                    "de": "Damenabteil f\u00fcr 6 Personen",
+                                                    "en": "Ladies only compartment for 6 passengers",
+                                                    "fr": ".",
+                                                    "it": "scompartimento donna per 6 persone"
+                                                },
+                                                "freeFollowupReservationApplied": false,
+                                                "spotLocations": [],
+                                                "surchargePrice": 200,
+                                                "capacity": 6
+                                            },
+                                            {
+                                                "externalIdentifier": "sideCorridorCoach_2",
+                                                "accommodationType": "SE",
+                                                "special": false,
+                                                "objects": [
+                                                    {
+                                                        "index": 0,
+                                                        "price": 44.9,
+                                                        "reservability": "RP"
+                                                    },
+                                                    {
+                                                        "index": 1,
+                                                        "price": 44.9,
+                                                        "reservability": "RP"
+                                                    },
+                                                    {
+                                                        "index": 2,
+                                                        "price": 89.9,
+                                                        "reservability": "RP"
+                                                    },
+                                                    {
+                                                        "index": 3,
+                                                        "price": 89.9,
+                                                        "reservability": "RP"
+                                                    }
+                                                ],
+                                                "id": 5000075,
+                                                "accommodationClass": [
+                                                    "class2"
+                                                ],
+                                                "name": {
+                                                    "de": "Sitzplatz 2. Klasse",
+                                                    "en": "Seat 2nd class",
+                                                    "fr": ".",
+                                                    "it": "Posto a sedere in 2a classe"
+                                                },
+                                                "freeFollowupReservationApplied": false,
+                                                "spotLocations": [],
+                                                "capacity": 6
+                                            }
+                                        ],
+                                        "reservability": "RP"
+                                    }
+                                ],
+                                "priceClass2": 0
+                            },
+                            "priceClass2": 269.6,
+                            "refCards": [],
+                            "co2Savings": 247.52,
+                            "outputTypes": [
+                                "MOBILE",
+                                "PDF",
+                                "SECURITY_PAPER"
+                            ],
+                            "prodGroupLabels": [
+                                "918 1 Reservierung Default",
+                                "Vollstorno",
+                                "Zugbindung",
+                                "eineFahrt",
+                                "featured"
+                            ],
+                            "validityPeriodFrom": "2024-05-06T20:18:00.000+02:00",
+                            "validityPeriodTo": "2024-05-07T10:24:00.000+02:00",
+                            "validityType": "oneway",
+                            "rideBound": true,
+                            "singleVariety": true,
+                            "reservationMandatory": true
+                        },
+                        {
+                            "name": "Sparschiene Komfort inkl. Reservierung",
+                            "productType": "CONNECTION",
+                            "partialOffer": false,
+                            "productDetails": [
+                                {
+                                    "scope": [
+                                        [
+                                            0,
+                                            0,
+                                            0,
+                                            8
+                                        ]
+                                    ],
+                                    "title": "ARES Sparschiene Komfort Nachtverkehr",
+                                    "name": {
+                                        "de": "Sparschiene Komfort inkl. Reservierung",
+                                        "en": "Sparschiene Komfort incl. Reservation",
+                                        "it": "Sparschiene Komfort prenotazione incl."
+                                    },
+                                    "validityPeriodFrom": "2024-05-06T20:18:00+02:00",
+                                    "validityPeriodTo": "2024-05-07T10:24:00+02:00",
+                                    "globallyPriced": true,
+                                    "objects": [
+                                        {
+                                            "index": 0,
+                                            "priceClass2": 39.9
+                                        },
+                                        {
+                                            "index": 1,
+                                            "priceClass2": 39.9
+                                        },
+                                        {
+                                            "index": 2,
+                                            "priceClass2": 74.9
+                                        },
+                                        {
+                                            "index": 3,
+                                            "priceClass2": 74.9
+                                        }
+                                    ],
+                                    "prodGroupLabels": [
+                                        "Zugbindung",
+                                        "eineFahrt",
+                                        "featured",
+                                        "komfortticketStorno"
+                                    ],
+                                    "validityType": "oneway"
+                                }
+                            ],
+                            "reservation": {
+                                "reservationSegments": [
+                                    {
+                                        "scope": [
+                                            0,
+                                            0,
+                                            0,
+                                            8
+                                        ],
+                                        "compartments": [
+                                            {
+                                                "externalIdentifier": "couchette4",
+                                                "accommodationType": "LE",
+                                                "special": false,
+                                                "objects": [
+                                                    {
+                                                        "index": 0,
+                                                        "price": 84.9,
+                                                        "reservability": "RP"
+                                                    },
+                                                    {
+                                                        "index": 1,
+                                                        "price": 84.9,
+                                                        "reservability": "RP"
+                                                    },
+                                                    {
+                                                        "index": 2,
+                                                        "price": 159.9,
+                                                        "reservability": "RP"
+                                                    },
+                                                    {
+                                                        "index": 3,
+                                                        "price": 159.9,
+                                                        "reservability": "RP"
+                                                    }
+                                                ],
+                                                "id": 3756464,
+                                                "accommodationClass": [
+                                                    "class2"
+                                                ],
+                                                "name": {
+                                                    "de": "Abteil f\u00fcr 4 Personen",
+                                                    "en": "Compartment for 4 passengers",
+                                                    "fr": ".",
+                                                    "it": "scompartimento per 4 persone"
+                                                },
+                                                "freeFollowupReservationApplied": false,
+                                                "spotLocations": [],
+                                                "surchargePrice": 260,
+                                                "capacity": 4
+                                            },
+                                            {
+                                                "externalIdentifier": "couchette6",
+                                                "accommodationType": "LE",
+                                                "special": false,
+                                                "objects": [
+                                                    {
+                                                        "index": 0,
+                                                        "price": 69.9,
+                                                        "reservability": "RP"
+                                                    },
+                                                    {
+                                                        "index": 1,
+                                                        "price": 69.9,
+                                                        "reservability": "RP"
+                                                    },
+                                                    {
+                                                        "index": 2,
+                                                        "price": 139.9,
+                                                        "reservability": "RP"
+                                                    },
+                                                    {
+                                                        "index": 3,
+                                                        "price": 139.9,
+                                                        "reservability": "RP"
+                                                    }
+                                                ],
+                                                "id": 3756468,
+                                                "accommodationClass": [
+                                                    "class2"
+                                                ],
+                                                "name": {
+                                                    "de": "Abteil f\u00fcr 6 Personen",
+                                                    "en": "Compartment for 6 passengers",
+                                                    "fr": ".",
+                                                    "it": "scompartimento per 6 persone"
+                                                },
+                                                "freeFollowupReservationApplied": false,
+                                                "spotLocations": [],
+                                                "surchargePrice": 190,
+                                                "capacity": 6
+                                            },
+                                            {
+                                                "externalIdentifier": "double",
+                                                "accommodationType": "BE",
+                                                "special": false,
+                                                "objects": [
+                                                    {
+                                                        "index": 0,
+                                                        "price": 134.9,
+                                                        "reservability": "RP"
+                                                    },
+                                                    {
+                                                        "index": 1,
+                                                        "price": 134.9,
+                                                        "reservability": "RP"
+                                                    },
+                                                    {
+                                                        "index": 2,
+                                                        "price": 259.9,
+                                                        "reservability": "RP"
+                                                    },
+                                                    {
+                                                        "index": 3,
+                                                        "price": 259.9,
+                                                        "reservability": "RP"
+                                                    }
+                                                ],
+                                                "id": 3756880,
+                                                "accommodationClass": [
+                                                    "class2"
+                                                ],
+                                                "name": {
+                                                    "de": "Abteil f\u00fcr 2 Personen (Double)",
+                                                    "en": "Compartment for 2 passengers (Double)",
+                                                    "fr": ".",
+                                                    "it": "scompartimento per 2 persone (Double)"
+                                                },
+                                                "freeFollowupReservationApplied": false,
+                                                "spotLocations": [],
+                                                "surchargePrice": 560,
+                                                "capacity": 2
+                                            },
+                                            {
+                                                "externalIdentifier": "T3",
+                                                "accommodationType": "BE",
+                                                "special": false,
+                                                "objects": [
+                                                    {
+                                                        "index": 0,
+                                                        "price": 109.9,
+                                                        "reservability": "RP"
+                                                    },
+                                                    {
+                                                        "index": 1,
+                                                        "price": 109.9,
+                                                        "reservability": "RP"
+                                                    },
+                                                    {
+                                                        "index": 2,
+                                                        "price": 204.9,
+                                                        "reservability": "RP"
+                                                    },
+                                                    {
+                                                        "index": 3,
+                                                        "price": 204.9,
+                                                        "reservability": "RP"
+                                                    }
+                                                ],
+                                                "id": 3756913,
+                                                "accommodationClass": [
+                                                    "class2"
+                                                ],
+                                                "name": {
+                                                    "de": "Abteil f\u00fcr 3 Personen (Triple)",
+                                                    "en": "Compartment for 3 passengers (Triple)",
+                                                    "fr": ".",
+                                                    "it": "scompartimento per 3 persone (Triple)"
+                                                },
+                                                "freeFollowupReservationApplied": false,
+                                                "spotLocations": [],
+                                                "surchargePrice": 400,
+                                                "capacity": 3
+                                            },
+                                            {
+                                                "externalIdentifier": "privateCouchette",
+                                                "accommodationType": "LE",
+                                                "special": false,
+                                                "privateVariations": [
+                                                    {
+                                                        "count": 1,
+                                                        "allocations": [
+                                                            {
+                                                                "objects": [
+                                                                    {
+                                                                        "index": 0,
+                                                                        "price": 0
+                                                                    },
+                                                                    {
+                                                                        "index": 1,
+                                                                        "price": 0
+                                                                    },
+                                                                    {
+                                                                        "index": 2,
+                                                                        "price": 524.9
+                                                                    },
+                                                                    {
+                                                                        "index": 3,
+                                                                        "price": 0
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "surchargePrice": 295.3
+                                                    },
+                                                    {
+                                                        "count": 2,
+                                                        "allocations": [
+                                                            {
+                                                                "objects": [
+                                                                    {
+                                                                        "index": 0,
+                                                                        "price": 0
+                                                                    },
+                                                                    {
+                                                                        "index": 2,
+                                                                        "price": 524.9
+                                                                    }
+                                                                ]
+                                                            },
+                                                            {
+                                                                "objects": [
+                                                                    {
+                                                                        "index": 1,
+                                                                        "price": 0
+                                                                    },
+                                                                    {
+                                                                        "index": 3,
+                                                                        "price": 524.9
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "surchargePrice": 820.2
+                                                    }
+                                                ],
+                                                "id": 5000057,
+                                                "accommodationClass": [
+                                                    "class2"
+                                                ],
+                                                "name": {
+                                                    "de": "Privatabteil im Liegewagen f\u00fcr bis zu 6 Personen",
+                                                    "en": "Private compartment for up to 6 passengers in a couchette coach",
+                                                    "fr": ".",
+                                                    "it": "Scompartimento privato in carrozza cuccette per 6 passeggeri al massimo"
+                                                },
+                                                "freeFollowupReservationApplied": false,
+                                                "spotLocations": [],
+                                                "capacity": 6,
+                                                "privateCompartmentContainsSubcompartments": false
+                                            },
+                                            {
+                                                "externalIdentifier": "privateSeat",
+                                                "accommodationType": "SE",
+                                                "special": false,
+                                                "privateVariations": [
+                                                    {
+                                                        "count": 2,
+                                                        "allocations": [
+                                                            {
+                                                                "objects": [
+                                                                    {
+                                                                        "index": 2,
+                                                                        "price": 354.9
+                                                                    }
+                                                                ]
+                                                            },
+                                                            {
+                                                                "objects": [
+                                                                    {
+                                                                        "index": 0,
+                                                                        "price": 0
+                                                                    },
+                                                                    {
+                                                                        "index": 1,
+                                                                        "price": 0
+                                                                    },
+                                                                    {
+                                                                        "index": 3,
+                                                                        "price": 354.9
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "surchargePrice": 480.2
+                                                    }
+                                                ],
+                                                "id": 5000059,
+                                                "accommodationClass": [
+                                                    "class2"
+                                                ],
+                                                "name": {
+                                                    "de": "Privatabteil im Sitzwagen 2. Klasse",
+                                                    "en": "Private compartment in a 2nd class seated coach",
+                                                    "fr": ".",
+                                                    "it": "Scompartimento privato in carrozza con posti a sedere, 2a classe"
+                                                },
+                                                "freeFollowupReservationApplied": false,
+                                                "spotLocations": [],
+                                                "capacity": 6,
+                                                "privateCompartmentContainsSubcompartments": false
+                                            },
+                                            {
+                                                "externalIdentifier": "femaleCouchette4",
+                                                "accommodationType": "LE",
+                                                "special": false,
+                                                "objects": [
+                                                    {
+                                                        "index": 0,
+                                                        "price": 84.9,
+                                                        "reservability": "RP"
+                                                    },
+                                                    {
+                                                        "index": 1,
+                                                        "price": 84.9,
+                                                        "reservability": "RP"
+                                                    },
+                                                    {
+                                                        "index": 2,
+                                                        "price": 159.9,
+                                                        "reservability": "RP"
+                                                    },
+                                                    {
+                                                        "index": 3,
+                                                        "price": 159.9,
+                                                        "reservability": "RP"
+                                                    }
+                                                ],
+                                                "id": 5000068,
+                                                "accommodationClass": [
+                                                    "class2"
+                                                ],
+                                                "name": {
+                                                    "de": "Damenabteil f\u00fcr 4 Personen",
+                                                    "en": "Ladies only compartment for 4 passengers",
+                                                    "fr": ".",
+                                                    "it": "scompartimento donna per 4 persone"
+                                                },
+                                                "freeFollowupReservationApplied": false,
+                                                "spotLocations": [],
+                                                "surchargePrice": 260,
+                                                "capacity": 4
+                                            },
+                                            {
+                                                "externalIdentifier": "femaleCouchette6",
+                                                "accommodationType": "LE",
+                                                "special": false,
+                                                "objects": [
+                                                    {
+                                                        "index": 0,
+                                                        "price": 69.9,
+                                                        "reservability": "RP"
+                                                    },
+                                                    {
+                                                        "index": 1,
+                                                        "price": 69.9,
+                                                        "reservability": "RP"
+                                                    },
+                                                    {
+                                                        "index": 2,
+                                                        "price": 139.9,
+                                                        "reservability": "RP"
+                                                    },
+                                                    {
+                                                        "index": 3,
+                                                        "price": 139.9,
+                                                        "reservability": "RP"
+                                                    }
+                                                ],
+                                                "id": 5000069,
+                                                "accommodationClass": [
+                                                    "class2"
+                                                ],
+                                                "name": {
+                                                    "de": "Damenabteil f\u00fcr 6 Personen",
+                                                    "en": "Ladies only compartment for 6 passengers",
+                                                    "fr": ".",
+                                                    "it": "scompartimento donna per 6 persone"
+                                                },
+                                                "freeFollowupReservationApplied": false,
+                                                "spotLocations": [],
+                                                "surchargePrice": 190,
+                                                "capacity": 6
+                                            },
+                                            {
+                                                "externalIdentifier": "sideCorridorCoach_2",
+                                                "accommodationType": "SE",
+                                                "special": false,
+                                                "objects": [
+                                                    {
+                                                        "index": 0,
+                                                        "price": 39.9,
+                                                        "reservability": "RP"
+                                                    },
+                                                    {
+                                                        "index": 1,
+                                                        "price": 39.9,
+                                                        "reservability": "RP"
+                                                    },
+                                                    {
+                                                        "index": 2,
+                                                        "price": 74.9,
+                                                        "reservability": "RP"
+                                                    },
+                                                    {
+                                                        "index": 3,
+                                                        "price": 74.9,
+                                                        "reservability": "RP"
+                                                    }
+                                                ],
+                                                "id": 5000075,
+                                                "accommodationClass": [
+                                                    "class2"
+                                                ],
+                                                "name": {
+                                                    "de": "Sitzplatz 2. Klasse",
+                                                    "en": "Seat 2nd class",
+                                                    "fr": ".",
+                                                    "it": "Posto a sedere in 2a classe"
+                                                },
+                                                "freeFollowupReservationApplied": false,
+                                                "spotLocations": [],
+                                                "capacity": 6
+                                            }
+                                        ],
+                                        "reservability": "RP"
+                                    }
+                                ],
+                                "priceClass2": 0
+                            },
+                            "priceClass2": 229.6,
+                            "refCards": [],
+                            "co2Savings": 247.52,
+                            "outputTypes": [
+                                "MOBILE",
+                                "PDF",
+                                "SECURITY_PAPER"
+                            ],
+                            "prodGroupLabels": [
+                                "Zugbindung",
+                                "eineFahrt",
+                                "featured",
+                                "komfortticketStorno"
+                            ],
+                            "validityPeriodFrom": "2024-05-06T20:18:00.000+02:00",
+                            "validityPeriodTo": "2024-05-07T10:24:00.000+02:00",
+                            "validityType": "oneway",
+                            "rideBound": true,
+                            "singleVariety": true,
+                            "reservationMandatory": true
+                        },
+                        {
+                            "name": "Sparschiene inkl. Reservierung",
+                            "productType": "CONNECTION",
+                            "partialOffer": false,
+                            "productDetails": [
+                                {
+                                    "scope": [
+                                        [
+                                            0,
+                                            0,
+                                            0,
+                                            8
+                                        ]
+                                    ],
+                                    "title": "ARES Sparschiene Nachtverkehr",
+                                    "name": {
+                                        "de": "Sparschiene inkl. Reservierung",
+                                        "en": "Sparschiene incl. Reservation",
+                                        "it": "Sparschiene prenotazione incl."
+                                    },
+                                    "validityPeriodFrom": "2024-05-06T20:18:00+02:00",
+                                    "validityPeriodTo": "2024-05-07T10:24:00+02:00",
+                                    "globallyPriced": true,
+                                    "objects": [
+                                        {
+                                            "index": 0,
+                                            "priceClass2": 14.9
+                                        },
+                                        {
+                                            "index": 1,
+                                            "priceClass2": 14.9
+                                        },
+                                        {
+                                            "index": 2,
+                                            "priceClass2": 64.9
+                                        },
+                                        {
+                                            "index": 3,
+                                            "priceClass2": 64.9
+                                        }
+                                    ],
+                                    "prodGroupLabels": [
+                                        "Kein Storno",
+                                        "Zugbindung",
+                                        "eineFahrt",
+                                        "featured",
+                                        "nightjetSparschiene"
+                                    ],
+                                    "validityType": "oneway"
+                                }
+                            ],
+                            "reservation": {
+                                "reservationSegments": [
+                                    {
+                                        "scope": [
+                                            0,
+                                            0,
+                                            0,
+                                            8
+                                        ],
+                                        "compartments": [
+                                            {
+                                                "externalIdentifier": "privateCouchette",
+                                                "accommodationType": "LE",
+                                                "special": false,
+                                                "privateVariations": [
+                                                    {
+                                                        "count": 1,
+                                                        "allocations": [
+                                                            {
+                                                                "objects": [
+                                                                    {
+                                                                        "index": 0,
+                                                                        "price": 0
+                                                                    },
+                                                                    {
+                                                                        "index": 1,
+                                                                        "price": 0
+                                                                    },
+                                                                    {
+                                                                        "index": 2,
+                                                                        "price": 499.9
+                                                                    },
+                                                                    {
+                                                                        "index": 3,
+                                                                        "price": 0
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "surchargePrice": 340.3
+                                                    },
+                                                    {
+                                                        "count": 2,
+                                                        "allocations": [
+                                                            {
+                                                                "objects": [
+                                                                    {
+                                                                        "index": 0,
+                                                                        "price": 0
+                                                                    },
+                                                                    {
+                                                                        "index": 2,
+                                                                        "price": 499.9
+                                                                    }
+                                                                ]
+                                                            },
+                                                            {
+                                                                "objects": [
+                                                                    {
+                                                                        "index": 1,
+                                                                        "price": 0
+                                                                    },
+                                                                    {
+                                                                        "index": 3,
+                                                                        "price": 499.9
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "surchargePrice": 840.2
+                                                    }
+                                                ],
+                                                "id": 5000057,
+                                                "accommodationClass": [
+                                                    "class2"
+                                                ],
+                                                "name": {
+                                                    "de": "Privatabteil im Liegewagen f\u00fcr bis zu 6 Personen",
+                                                    "en": "Private compartment for up to 6 passengers in a couchette coach",
+                                                    "fr": ".",
+                                                    "it": "Scompartimento privato in carrozza cuccette per 6 passeggeri al massimo"
+                                                },
+                                                "freeFollowupReservationApplied": false,
+                                                "spotLocations": [],
+                                                "capacity": 6,
+                                                "privateCompartmentContainsSubcompartments": false
+                                            },
+                                            {
+                                                "externalIdentifier": "privateSeat",
+                                                "accommodationType": "SE",
+                                                "special": false,
+                                                "privateVariations": [
+                                                    {
+                                                        "count": 2,
+                                                        "allocations": [
+                                                            {
+                                                                "objects": [
+                                                                    {
+                                                                        "index": 2,
+                                                                        "price": 319.9
+                                                                    }
+                                                                ]
+                                                            },
+                                                            {
+                                                                "objects": [
+                                                                    {
+                                                                        "index": 0,
+                                                                        "price": 0
+                                                                    },
+                                                                    {
+                                                                        "index": 1,
+                                                                        "price": 0
+                                                                    },
+                                                                    {
+                                                                        "index": 3,
+                                                                        "price": 319.9
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "surchargePrice": 480.2
+                                                    }
+                                                ],
+                                                "id": 5000059,
+                                                "accommodationClass": [
+                                                    "class2"
+                                                ],
+                                                "name": {
+                                                    "de": "Privatabteil im Sitzwagen 2. Klasse",
+                                                    "en": "Private compartment in a 2nd class seated coach",
+                                                    "fr": ".",
+                                                    "it": "Scompartimento privato in carrozza con posti a sedere, 2a classe"
+                                                },
+                                                "freeFollowupReservationApplied": false,
+                                                "spotLocations": [],
+                                                "capacity": 6,
+                                                "privateCompartmentContainsSubcompartments": false
+                                            },
+                                            {
+                                                "externalIdentifier": "sideCorridorCoach_2",
+                                                "accommodationType": "SE",
+                                                "special": false,
+                                                "objects": [
+                                                    {
+                                                        "index": 0,
+                                                        "price": 14.9,
+                                                        "reservability": "RP"
+                                                    },
+                                                    {
+                                                        "index": 1,
+                                                        "price": 14.9,
+                                                        "reservability": "RP"
+                                                    },
+                                                    {
+                                                        "index": 2,
+                                                        "price": 64.9,
+                                                        "reservability": "RP"
+                                                    },
+                                                    {
+                                                        "index": 3,
+                                                        "price": 64.9,
+                                                        "reservability": "RP"
+                                                    }
+                                                ],
+                                                "id": 5000075,
+                                                "accommodationClass": [
+                                                    "class2"
+                                                ],
+                                                "name": {
+                                                    "de": "Sitzplatz 2. Klasse",
+                                                    "en": "Seat 2nd class",
+                                                    "fr": ".",
+                                                    "it": "Posto a sedere in 2a classe"
+                                                },
+                                                "freeFollowupReservationApplied": false,
+                                                "spotLocations": [],
+                                                "capacity": 6
+                                            }
+                                        ],
+                                        "reservability": "RP"
+                                    }
+                                ],
+                                "priceClass2": 0
+                            },
+                            "priceClass2": 159.6,
+                            "refCards": [],
+                            "co2Savings": 247.52,
+                            "outputTypes": [
+                                "MOBILE",
+                                "PDF",
+                                "SECURITY_PAPER"
+                            ],
+                            "prodGroupLabels": [
+                                "Kein Storno",
+                                "Zugbindung",
+                                "eineFahrt",
+                                "featured",
+                                "nightjetSparschiene"
+                            ],
+                            "validityPeriodFrom": "2024-05-06T20:18:00.000+02:00",
+                            "validityPeriodTo": "2024-05-07T10:24:00.000+02:00",
+                            "validityType": "oneway",
+                            "rideBound": true,
+                            "singleVariety": true,
+                            "reservationMandatory": true
+                        }
+                    ],
+                    "informationMessages": [
+                        {
+                            "category": 99,
+                            "validFrom": "2024-05-07T10:24:00+02:00",
+                            "validTo": "2024-05-06T20:18:00+02:00",
+                            "sectionIndex": 0,
+                            "header": "Achtung \u2013 Fahrzeiten k\u00f6nnen sich noch \u00e4ndern",
+                            "text": "<p>Die Abfahrts- und/oder Ankunftszeiten k\u00f6nnen sich bei dieser Verbindung am gew\u00e4hlten Tag aufgrund von Bauarbeiten bzw. sonstigen \u00c4nderungen im Betriebsablauf noch \u00e4ndern. Nach dem Kauf eines Tickets werden wir Sie per E-Mail und/oder SMS \u00fcber die \u00c4nderungen informieren. (Bitte kontrollieren Sie auch regelm\u00e4\u00dfig Ihren Spam-Ordner).</p><p>Es gelten folgende Stornobedingungen: Bei einer \u00c4nderung von mehr als 60 Minuten ist auch bei einem Sparschiene-Ticket im Nachtverkehr (z.B. Nightjet) bis 15 Tage und im Tagverkehr bis 4 Tage vor dem 1. G\u00fcltigkeitstag die Erstattung m\u00f6glich und kostenlos. Bei einem Online-Ticket darf das Ticket daf\u00fcr noch nicht als pdf bezogen (heruntergeladen) worden sein.</p>",
+                            "textPlain": "Die Abfahrts- und/oder Ankunftszeiten k\u00f6nnen sich bei dieser Verbindung am gew\u00e4hlten Tag aufgrund von Bauarbeiten bzw. sonstigen \u00c4nderungen im Betriebsablauf noch \u00e4ndern. Nach dem Kauf eines Tickets werden wir Sie per E-Mail und/oder SMS \u00fcber die \u00c4nderungen informieren. (Bitte kontrollieren Sie auch regelm\u00e4\u00dfig Ihren Spam-Ordner).Es gelten folgende Stornobedingungen: Bei einer \u00c4nderung von mehr als 60 Minuten ist auch bei einem Sparschiene-Ticket im Nachtverkehr (z.B. Nightjet) bis 15 Tage und im Tagverkehr bis 4 Tage vor dem 1. G\u00fcltigkeitstag die Erstattung m\u00f6glich und kostenlos. Bei einem Online-Ticket darf das Ticket daf\u00fcr noch nicht als pdf bezogen (heruntergeladen) worden sein."
+                        }
+                    ],
+                    "njIndex": 0
+                }
+            ],
+            "filter": {
+                "maxTrainChanges": 0
+            },
+            "rfpIndex": 0
+        }
+    ],
+    "ok": true,
+    "responseCode": 200
+}
