@@ -25,6 +25,7 @@ def request_token() -> Token:
 def get_token() -> Token:
     try:
         with open('token.json', 'r') as file:
+            print("Found existing token")
             data = json.load(file)
             return Token(**data)
     except FileNotFoundError:

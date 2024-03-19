@@ -1,10 +1,7 @@
-import json
-
 from dataclasses import dataclass
 from collections import defaultdict
 from typing import List
 import requests
-import json
 
 @dataclass
 class Ticket:
@@ -133,17 +130,5 @@ def get_prices(timestamp, token):
         return bookings
     else:
         raise Exception(f"POST request failed with status code: {response.status_code}")
-
-
-if __name__ == "__main__":
-    with open('3.json', 'r') as file:
-        data = json.load(file)
-    bookings = parse_booking(data)
-    bookings = best_prices(bookings)
-    for booking in bookings:
-        print(booking)
-    else:
-        print("no bookings")
-    print("our train", our_train(bookings))
 
 

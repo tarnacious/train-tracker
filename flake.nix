@@ -9,6 +9,7 @@
     in {
       devShells.${system}.default = pkgs.mkShell {
         buildInputs = [
+          pkgs.sqlite
           pkgs.python311
           pkgs.python311Packages.virtualenv
           pkgs.python311Packages.requests

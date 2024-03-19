@@ -32,9 +32,9 @@ def format_search_result(train: Train):
     return f'{train.depart} [{train.train}] {train.from_name} -> {train.to_name} ({train.duration_format}) [{train.depart_dt}]'
 
 
-def search(date: datetime) -> List[Train]:
+def search(date: datetime, limit=5) -> List[Train]:
     date_str = date.strftime('%d%m%Y')
-    search_url = f"https://www.nightjet.com/nj-booking-ocp/connection/find/8096003/8796001/{date_str}/00:00?skip=0&limit=50&lang=de&backward=false"
+    search_url = f"https://www.nightjet.com/nj-booking-ocp/connection/find/8096003/8796001/{date_str}/00:00?skip=0&limit={limit}&lang=de&backward=false"
     response = requests.get(search_url)
 
     if response.status_code == 200:
