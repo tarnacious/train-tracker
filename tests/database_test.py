@@ -1,5 +1,6 @@
 from datetime import datetime
 from trains.database import Database, Train
+from trains import models
 from sqlmodel import create_engine
 import pytest
 
@@ -16,26 +17,26 @@ def test_no_trains_database(database):
 
 
 def test_insert_train(database):
-    train = Train(
+    train = models.Train(
         from_name = "1",
         to_name = "2",
-        depart_dt = "10202020",
+        depart_dt = 10202020,
         train = "some train",
         duration_format = "14 hours",
         depart = datetime(2023,10,10)
     )
 
-    database.insert_train(train)
-    assert train.id == 1 
+    saved_train = database.insert_train(train)
+    assert saved_train.id == 1 
 
 def test_find_train(database):
     found_train = database.find_train("1", "2", "10202020")
     assert found_train is None
 
-    train = Train(
+    train = models.Train(
         from_name = "1",
         to_name = "2",
-        depart_dt = "10202020",
+        depart_dt = 10202020,
         train = "some train",
         duration_format = "14 hours",
         depart = datetime(2023,10,10)
@@ -50,10 +51,10 @@ def test_find_trains(database):
     found_trains = database.find_trains("1", "2")
     assert found_trains == []
 
-    train = Train(
+    train = models.Train(
         from_name = "1",
         to_name = "2",
-        depart_dt = "10202020",
+        depart_dt = 10202020,
         train = "some train",
         duration_format = "14 hours",
         depart = datetime(2023,10,10)
@@ -61,4 +62,4 @@ def test_find_trains(database):
     database.insert_train(train)
 
     found_trains = database.find_trains("1", "2")
-    assert found_trains == [train]
+    assert len(found_trains) == 1 
