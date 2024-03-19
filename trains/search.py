@@ -1,9 +1,7 @@
-import json
 import requests
 from datetime import datetime
-from dataclasses import dataclass
 from typing import List
-from database import Train
+from trains.models import Train
 
 
 def parse_search(data) -> List[Train]:
@@ -32,7 +30,7 @@ def format_search_result(train: Train):
     return f'{train.depart} [{train.train}] {train.from_name} -> {train.to_name} ({train.duration_format}) [{train.depart_dt}]'
 
 
-def search(date: datetime, limit=5) -> List[Train]:
+def search(date: datetime, limit: int = 5) -> List[Train]:
     date_str = date.strftime('%d%m%Y')
     search_url = f"https://www.nightjet.com/nj-booking-ocp/connection/find/8096003/8796001/{date_str}/00:00?skip=0&limit={limit}&lang=de&backward=false"
     response = requests.get(search_url)
@@ -41,13 +39,5 @@ def search(date: datetime, limit=5) -> List[Train]:
         return parse_search(response.json())
     else:
         raise Exception(f"POST request failed with status code: {response.status_code}")
-
-
-if __name__ == "__main__":
-    with open('search_results.json', 'r') as file:
-        data = json.load(file)
-    trains = parse_search(data)
-    for train in trains:
-        print(format_search_result(train))
 
 

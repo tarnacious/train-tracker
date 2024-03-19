@@ -1,3 +1,5 @@
 requests
 sqlmodel
 pytest
+mypy
+types-requests

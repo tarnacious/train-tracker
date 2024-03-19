@@ -1,15 +1,7 @@
-from dataclasses import dataclass
 from collections import defaultdict
-from typing import List
+from typing import List, Optional
+from trains.models import BookingTicket
 import requests
-
-@dataclass
-class Ticket:
-    ticket_type: str
-    identifier: str
-    name: str
-    price: float
-
 
 def request_booking_json(timestamp: int):
     return {
@@ -51,7 +43,7 @@ def request_booking_json(timestamp: int):
         "lang": "de"
     }
 
-def parse_booking(data) -> List[Ticket]:
+def parse_booking(data) -> List[BookingTicket]:
     if "result" not in data:
         print("No result in data", data)
         return []
@@ -70,7 +62,7 @@ def parse_booking(data) -> List[Ticket]:
                 objects = compartment["objects"]
 
                 total = sum(map(lambda x: x["price"], objects))
-                tickets.append(Ticket(
+                tickets.append(BookingTicket(
                     ticket_type = accomodation_type,
                     identifier = identifier,
                     name = name,
@@ -87,7 +79,7 @@ def parse_booking(data) -> List[Ticket]:
                             if (obj["price"] != 0):
                                 prices.append(obj["price"])
                 for price in set(prices):
-                    tickets.append(Ticket(
+                    tickets.append(BookingTicket(
                         ticket_type = accomodation_type,
                         identifier = identifier,
                         name = name,
@@ -99,7 +91,7 @@ def parse_booking(data) -> List[Ticket]:
 
     return tickets 
 
-def best_prices(tickets: List[Ticket]) -> List[Ticket]:
+def best_prices(tickets: List[BookingTicket]) -> List[BookingTicket]:
     # Group tickets by identifier
     grouped_tickets = defaultdict(list)
     for ticket in tickets:
@@ -113,8 +105,9 @@ def best_prices(tickets: List[Ticket]) -> List[Ticket]:
 
     return best_prices
 
-def our_train(tickets: List[Ticket]) -> Ticket | None:
-    return next(filter(lambda ticket: ticket.identifier == 'privateCouchette', tickets), None)
+def our_train(tickets: List[BookingTicket]) -> Optional[BookingTicket]:
+    filtered_tickets: filter[BookingTicket] = filter(lambda ticket: ticket.identifier == 'privateCouchette', tickets)
+    return next(filtered_tickets, None)
 
 def get_prices(timestamp, token):
     headers = {
