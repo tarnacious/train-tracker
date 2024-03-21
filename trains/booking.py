@@ -1,17 +1,18 @@
 from collections import defaultdict
 from typing import List, Optional
-from trains.models import BookingTicket
+from trains.models import BookingTicket, Token, Train
+
 import requests
 
-def request_booking_json(timestamp: int):
+def request_booking_json(train: Train):
     return {
-        "njFrom": 8098160,
-        "njDep": timestamp,
-        "njTo": 8700011,
+        "njFrom": train.from_code,
+        "njDep": train.depart_dt,
+        "njTo": train.to_code,
         "maxChanges": 0,
         "filter": {
-            "njTrain": "NJ 40424",
-            "njDeparture": timestamp 
+            "njTrain": train.train,
+            "njDeparture": train.depart_dt 
         },
         "objects": [
             {
@@ -109,12 +110,12 @@ def our_train(tickets: List[BookingTicket]) -> Optional[BookingTicket]:
     filtered_tickets: filter[BookingTicket] = filter(lambda ticket: ticket.identifier == 'privateCouchette', tickets)
     return next(filtered_tickets, None)
 
-def get_prices(timestamp, token):
+def get_prices(train: Train, token: Token):
     headers = {
             "x-token": token.token 
     }
     url: str = "https://www.nightjet.com/nj-booking-ocp/offer/get"
-    data = request_booking_json(timestamp)
+    data = request_booking_json(train)
     response = requests.post(url, json=data, headers=headers)
     if response.status_code == 200:
         data = response.json()

@@ -1,11 +1,7 @@
 import json
 from dataclasses import dataclass, asdict
 import requests
-
-@dataclass
-class Token:
-    public_id: str
-    token: str
+from trains.models import Token
 
 def parse_token(data) -> Token: 
     return Token(

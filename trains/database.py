@@ -1,4 +1,4 @@
-from typing import Optional, Sequence
+from typing import Optional, Sequence, List
 from sqlmodel import Field, Session, SQLModel, create_engine, select
 from datetime import datetime
 from sqlmodel import SQLModel
@@ -11,15 +11,25 @@ class Train(SQLModel, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
     from_name: str
     to_name: str
+    from_code: str
+    to_code: str
     depart_dt: int
     train: str
     duration_format: str
     depart: datetime
     created_at: datetime = Field(default=datetime.utcnow(), nullable=False)
 
+    def __str__(self) -> str:
+        return f"{self.depart} {self.train} {self.from_name} -> {self.to_name}"
+
     @classmethod
     def from_model(cls, train: models.Train):
         return cls(**asdict(train))
+
+class Check(SQLModel, table=True):
+    id: Optional[int] = Field(default=None, primary_key=True)
+    train_id: int = Field(default=None, foreign_key="train.id")
+    created_at: datetime = Field(default=datetime.utcnow(), nullable=False)
 
 class Ticket(SQLModel, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
@@ -27,8 +37,11 @@ class Ticket(SQLModel, table=True):
     identifier: str
     name: str
     price: float
-    train_id: Optional[int] = Field(default=None, foreign_key="train.id")
-    created_at: datetime = Field(default=datetime.utcnow(), nullable=False)
+    check_id: int = Field(default=None, foreign_key="check.id")
+
+    @classmethod
+    def from_model(cls, train: models.BookingTicket, check: Check):
+        return cls(**asdict(train), check_id=check.id)
 
 class Database:
     def __init__(self, engine):
@@ -62,3 +75,13 @@ class Database:
             print(statement)
             results = session.exec(statement)
             return results.all()
+
+    def insert_tickets(self, train_id: int, tickets: List[models.BookingTicket]):
+        with Session(self.engine) as session:
+            train_check = Check(train_id=train_id)
+            session.add(train_check)
+            session.commit()
+            if len(tickets) > 0:
+                for ticket in tickets:
+                    session.add(Ticket.from_model(ticket, train_check))
+                session.commit()

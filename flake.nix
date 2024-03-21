@@ -9,7 +9,7 @@
     in {
       devShells.${system}.default = pkgs.mkShell {
         buildInputs = [
-          pkgs.sqlite
+          (pkgs.sqlite.override { interactive=true; })
           pkgs.python311
           pkgs.python311Packages.virtualenv
           pkgs.python311Packages.requests
