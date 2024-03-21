@@ -36,9 +36,3 @@ def get_token() -> Token:
 
     
 
-if __name__ == "__main__":
-    with open('start_session.json', 'r') as file:
-        data = json.load(file)
-    token = parse_token(data)
-    print(token)
-
