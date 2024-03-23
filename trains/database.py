@@ -1,9 +1,9 @@
 from typing import Optional, Sequence, List
-from sqlmodel import Field, Session, SQLModel, create_engine, select
+from sqlmodel import Field, Session, SQLModel, select
 from datetime import datetime
 from sqlmodel import SQLModel
 from trains import models
-from dataclasses import asdict 
+from dataclasses import asdict, dataclass 
 
 SQLModel.__table_args__ = {'extend_existing': True}
 
@@ -26,6 +26,14 @@ class Train(SQLModel, table=True):
     def from_model(cls, train: models.Train):
         return cls(**asdict(train))
 
+    def to_model(self):
+        dictret = dict(self.__dict__);
+        dictret.pop('_sa_instance_state', None)
+        dictret.pop('id', None)
+        dictret.pop('created_at', None)
+        return models.Train(**dictret)
+
+
 class Check(SQLModel, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
     train_id: int = Field(default=None, foreign_key="train.id")
@@ -42,6 +50,28 @@ class Ticket(SQLModel, table=True):
     @classmethod
     def from_model(cls, train: models.BookingTicket, check: Check):
         return cls(**asdict(train), check_id=check.id)
+
+@dataclass 
+class TrainTicketCheck:
+    train: Train
+    check: Check
+    ticket: Ticket
+
+@dataclass 
+class CheckTickets:
+    check: Check
+    tickets: List[Ticket]
+
+@dataclass
+class TicketPrice:
+    date: datetime
+    price: float 
+
+@dataclass
+class TrainChecks:
+    train: Train
+    availability: dict[str, List[TicketPrice | None]]
+
 
 class Database:
     def __init__(self, engine):

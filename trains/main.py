@@ -1,25 +1,18 @@
 from collections import defaultdict
-from dataclasses import asdict
-from time import sleep
 from typing import List
-from trains.search import search, format_search_result
+from trains.search import search
 from datetime import datetime
 from trains.tokens import get_token
-from trains.booking import get_prices, our_train
+from trains.booking import get_prices
 from sqlmodel import create_engine, Session, select
 from trains import database
 from trains import models
 from sqlalchemy import text
 from trains.format import format_relative_time
-from trains.database import Check, Train, Ticket
+from trains.database import Check, CheckTickets, TicketPrice, Train, Ticket, TrainChecks, TrainTicketCheck
 from itertools import groupby
 
-def run_import(from_station: int, to_station: int, date: datetime, db, limit=50):
-    date = datetime.now()
-    token = get_token()
-    print("Searching for trains from", date)
-    trains: List[models.Train] = search(from_station, to_station, date, limit=limit)
-    print("Found trains", len(trains))
+def save_trains(trains: List[models.Train], db) -> List[database.Train]:
     saved_trains: List[database.Train] = []
     for train in trains:
         existing = db.find_train(train.from_name, train.to_name, train.depart_dt)
@@ -29,17 +22,22 @@ def run_import(from_station: int, to_station: int, date: datetime, db, limit=50)
             saved_trains.append(saved_train)
         else:
             saved_trains.append(existing)
+    return saved_trains
+
+def run_import(from_station: int, to_station: int, date: datetime, db, limit=50):
+    date = datetime.now()
+    token = get_token()
+    print("Searching for trains from", date)
+    trains: List[models.Train] = search(from_station, to_station, date, limit=limit)
+    print("Found trains", len(trains))
+    saved_trains = save_trains(trains, db)
 
     for train in saved_trains:
+        print(f"## {train}")
         if train.id is None:
             print("Train could be None?")
             continue
-        dictret = dict(train.__dict__);
-        dictret.pop('_sa_instance_state', None)
-        dictret.pop('id', None)
-        dictret.pop('created_at', None)
-        print(f"## {train.id} {train.train} {train.from_name} -> {train.to_name}")
-        tickets = get_prices(models.Train(**dictret), token)
+        tickets = get_prices(train.to_model(), token)
         for ticket in tickets:
             print(ticket)
         print(f"")
@@ -61,54 +59,52 @@ def run():
     #print(trains)
 
     with Session(db.engine) as session:
-        statement = select(Train, Check, Ticket).where(Train.id == Check.train_id).where(Ticket.check_id == Check.id).where(Train.train == 'NJ 40424').order_by(Train.id)
-        results = session.execute(statement)
-        #allresults = list(results)
+        statement = select(Train, Check, Ticket) \
+            .where(Train.id == Check.train_id) \
+            .where(Ticket.check_id == Check.id) \
+            .where(Train.train == 'NJ 40424') \
+            .order_by(Train.id)
+
+        results = session.exec(statement)
+        train_tickets = []
+        for train, check, ticket in list(results):
+            train_tickets.append(TrainTicketCheck(
+                train=train,
+                check=check,
+                ticket=ticket
+            ))
+        print(f"Found {len(train_tickets)} train ticket")
+        
         trains = []
-        for k, g in groupby(results, lambda x: x[0].id):
-            group_items = list(g)
-            check_list = sorted(list(map(lambda x: { "check": x[1], "ticket": x[2] }, group_items)), key=lambda x: x["check"].id)
+        for _, g in groupby(train_tickets, lambda x: x.train.id):
+            check_list = sorted(g, key=lambda x: x.check.id)
 
-            checks = []
-            for check_key, ticket_group in groupby(check_list, lambda x: x["check"].id):
+            ticket_identifers = set(list(map(lambda x: x.ticket.identifier, check_list)))
+
+            ticket_availability: dict[str, List[TicketPrice | None]] = defaultdict(list) 
+            for _, ticket_group in groupby(check_list, lambda x: x.check.id):
                 ticket_group = list(ticket_group)
-                check = ticket_group[0]["check"]
-                tickets = list(map(lambda x: x["ticket"], ticket_group))
-                checks.append({
-                    "check": check,
-                    "tickets": tickets
-                    })
-
-            trains.append({
-                "train": group_items[0][0],
-                "checks": checks
-            })
+                check = ticket_group[0].check
+                tickets = list(map(lambda x: x.ticket, ticket_group))
+                ticket_types = {ticket.identifier: ticket for ticket in tickets}
+                for identifier in ticket_identifers:
+                    ticket_availability[identifier].append(TicketPrice(
+                            date=check.created_at,
+                            price=ticket_types[identifier].price if identifier in ticket_types else None
+                        ))
+            trains.append(TrainChecks(
+                train=check_list[0].train,
+                availability=ticket_availability
+            ))
+            
+        print(f"Found {len(trains)} trains")
 
         for train in trains:
-            checks = train["checks"]
-
-            ticket_identifiers = list(map(lambda check: list(map(lambda ticket: ticket.identifier, check["tickets"])), checks))
-
-            ticket_identifiers = [item for sublist in ticket_identifiers for item in sublist]
-
-            train_tickets = defaultdict(list) 
-            for check in checks:
-                tickets = check["tickets"]
-                def key_function(item):
-                    return item.identifier
-                result_dict = {key_function(ticket): ticket for ticket in tickets}
-
-                for identifier in ticket_identifiers:
-                    train_tickets[identifier].append({
-                        "date": check["check"].created_at,
-                        "price": result_dict[identifier].price if identifier in result_dict else None
-                    })
-
-            print( "### ", train["train"])
-            for key, value in train_tickets.items():
-                prices = list(map(lambda x: x["price"], value))
-                price = "sold out" if prices[-1] is None else "{:.2f}€".format(prices[-1]) 
-                print(key, price)
+            print( "### ", train.train)
+            for k, tickets in train.availability.items():
+                price = tickets[-1].price
+                price_format = "sold out" if price is None else "{:.2f}€".format(price) 
+                print(k, price_format)
             print("")
             
 

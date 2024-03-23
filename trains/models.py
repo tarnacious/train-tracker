@@ -19,7 +19,6 @@ class Train:
     duration_format: str
     depart: datetime
 
-
 @dataclass
 class Token:
     public_id: str
