@@ -1,0 +1,57 @@
+<html>
+  {% for train in trains %}
+  <ul>
+    <li>
+        <p>{{ train.train.train }}</p>
+        <table>
+          <tr>
+            <td>
+            type
+            </td>
+            <td>
+            price
+            </td>
+            <td>
+            max
+            </td>
+            <td>
+            min
+            </td>
+            <td>
+            first
+            </td>
+            <td>
+            last
+            </td>
+          </tr>
+        {% for key, availabilities in train.ticket_types.items() %}
+          <tr>
+            <td>
+              {{ key }}
+            </td>
+            <td>
+              {% if availabilities.price is not none and availabilities.price.price is not none %}
+              {{ availabilities.price.price }}
+              {% else %}
+              -
+              {% endif %}
+            </td>
+            <td>
+              {{ availabilities.max_price.price }}
+            </td>
+            <td>
+              {{ availabilities.min_price.price }}
+            </td>
+            <td>
+              {{ availabilities.first_sold.date.strftime('%Y-%m-%d') }}
+            </td>
+            <td>
+              {{ availabilities.last_sold.date.strftime('%Y-%m-%d') }}
+            </td>
+          </tr>
+        {% endfor %}
+        </table>
+    </li>
+  </ul>
+  {% endfor %}
+</html>

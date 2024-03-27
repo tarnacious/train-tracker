@@ -1,5 +1,5 @@
-from collections import defaultdict
 from typing import List
+import os
 from trains.search import search
 from datetime import datetime
 from trains.tokens import get_token
@@ -10,7 +10,16 @@ from trains import models
 from sqlalchemy import text
 from trains.format import format_relative_time
 from trains.database import Check, CheckTickets, TicketPrice, Train, Ticket, TrainChecks, TrainTicketCheck
-from itertools import groupby
+from trains.data import get_trains, train_info
+from trains.render import render_route, render_routes
+import re
+
+def slugify(s):
+  s = s.lower().strip()
+  s = re.sub(r'[^\w\s-]', '', s)
+  s = re.sub(r'[\s_-]+', '-', s)
+  s = re.sub(r'^-+|-+$', '', s)
+  return s
 
 def save_trains(trains: List[models.Train], db) -> List[database.Train]:
     saved_trains: List[database.Train] = []
@@ -49,64 +58,42 @@ def run():
     db = database.Database(engine)
 
     # Paris -> Berlin
-    #run_import(8796001, 8096003, datetime.now(), db, limit=30)
+    #run_import(8796001, 8096003, datetime.now(), db, limit=50)
 
     # Berlin -> Paris
-    #run_import(8096003, 8796001, datetime.now(), db, limit=30)
-    
+    #run_import(8096003, 8796001, datetime.now(), db, limit=50)
+
+    #exit()
+   
 
     #trains = db.find_all_trains()
     #print(trains)
+    train_names = [
+        ('NJ 40424', "Berlin -> Paris", "nj-40424.html"), 
+        ('NJ 40469', "Paris -> Berlin", "nj-40469.html")
+    ]
 
-    with Session(db.engine) as session:
-        statement = select(Train, Check, Ticket) \
-            .where(Train.id == Check.train_id) \
-            .where(Ticket.check_id == Check.id) \
-            .where(Train.train == 'NJ 40424') \
-            .order_by(Train.id)
+    output_path = './out'
+    try:
+        print("Creating output directory", output_path)
+        os.makedirs(output_path)
+    except FileExistsError:
+        print("Output path already exists")
+    for name, _, _ in train_names:
+        trains = get_trains(name, db)
+        train_data = train_info(trains)
+        html = render_route(name, train_data)
+        filename = slugify(name) + ".html"
+        filepath = os.path.join(output_path, filename)
+        with open(filepath, 'w') as f:
+            f.write(html)
+            print("Written file", filepath)
 
-        results = session.exec(statement)
-        train_tickets = []
-        for train, check, ticket in list(results):
-            train_tickets.append(TrainTicketCheck(
-                train=train,
-                check=check,
-                ticket=ticket
-            ))
-        print(f"Found {len(train_tickets)} train ticket")
-        
-        trains = []
-        for _, g in groupby(train_tickets, lambda x: x.train.id):
-            check_list = sorted(g, key=lambda x: x.check.id)
-
-            ticket_identifers = set(list(map(lambda x: x.ticket.identifier, check_list)))
-
-            ticket_availability: dict[str, List[TicketPrice | None]] = defaultdict(list) 
-            for _, ticket_group in groupby(check_list, lambda x: x.check.id):
-                ticket_group = list(ticket_group)
-                check = ticket_group[0].check
-                tickets = list(map(lambda x: x.ticket, ticket_group))
-                ticket_types = {ticket.identifier: ticket for ticket in tickets}
-                for identifier in ticket_identifers:
-                    ticket_availability[identifier].append(TicketPrice(
-                            date=check.created_at,
-                            price=ticket_types[identifier].price if identifier in ticket_types else None
-                        ))
-            trains.append(TrainChecks(
-                train=check_list[0].train,
-                availability=ticket_availability
-            ))
-            
-        print(f"Found {len(trains)} trains")
-
-        for train in trains:
-            print( "### ", train.train)
-            for k, tickets in train.availability.items():
-                price = tickets[-1].price
-                price_format = "sold out" if price is None else "{:.2f}€".format(price) 
-                print(k, price_format)
-            print("")
-            
+    filepath = os.path.join(output_path, "index.html")
+    html = render_routes(train_names)
+    with open(filepath, 'w') as f:
+        f.write(html)
+        print("Written file", filepath)
 
     return
     with Session(db.engine) as session:

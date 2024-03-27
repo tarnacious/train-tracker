@@ -1,0 +1,6 @@
+<html>
+  <h1>index</h1>
+  {% for train, route, link in trains %}
+    <p><a href="{{ link }}">{{ train }} {{ route }}</a></p>
+  {% endfor %}
+</html>

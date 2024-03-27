@@ -3,3 +3,4 @@ sqlmodel
 pytest
 mypy
 types-requests
+Jinja2

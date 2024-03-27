@@ -65,7 +65,22 @@ class CheckTickets:
 @dataclass
 class TicketPrice:
     date: datetime
-    price: float 
+    price: float  | None
+
+@dataclass
+class AvailabilityInfo:
+    prices: List[TicketPrice | None]
+    price: TicketPrice | None
+    last_sold: TicketPrice | None
+    first_sold: TicketPrice | None
+    max_price: TicketPrice | None
+    min_price: TicketPrice | None
+
+
+@dataclass 
+class Availability: 
+    train: Train
+    ticket_types: dict[str, AvailabilityInfo]
 
 @dataclass
 class TrainChecks:
