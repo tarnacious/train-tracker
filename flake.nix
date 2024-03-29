@@ -24,16 +24,18 @@
               cp -r ./* $out/
             '';
           };
+          python = (unstable.python312.withPackages (python-pkgs: [
+              python-pkgs.requests
+              python-pkgs.sqlmodel
+              python-pkgs.jinja2
+            ]));
         in pkgs.writeShellApplication {
           name = "train-tracker";
           runtimeInputs = [
-            pkgs.python312
-            pkgs.python312Packages.requests
-            unstable.python312Packages.sqlmodel
-            unstable.python312Packages.jinja2
+            python
           ];
           text = ''
-            python3 ${mypkg}/run.py
+            ${python}/bin/python ${mypkg}/run.py
           '';
         };
     in {
