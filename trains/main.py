@@ -58,10 +58,10 @@ def run():
     db = database.Database(engine)
 
     # Paris -> Berlin
-    #run_import(8796001, 8096003, datetime.now(), db, limit=50)
+    run_import(8796001, 8096003, datetime.now(), db, limit=50)
 
     # Berlin -> Paris
-    #run_import(8096003, 8796001, datetime.now(), db, limit=50)
+    run_import(8096003, 8796001, datetime.now(), db, limit=50)
 
     #exit()
    
