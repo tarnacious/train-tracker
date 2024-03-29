@@ -54,7 +54,9 @@ def run_import(from_station: int, to_station: int, date: datetime, db, limit=50)
 
 
 def run():
-    engine = create_engine("sqlite:///trains.db")
+    output_path = os.environ.get('HTML_PATH', "./out")
+    database_path = os.environ.get('DATABASE_PATH', "trains.db")
+    engine = create_engine(f"sqlite:///{database_path}")
     db = database.Database(engine)
 
     # Paris -> Berlin
@@ -63,17 +65,11 @@ def run():
     # Berlin -> Paris
     run_import(8096003, 8796001, datetime.now(), db, limit=50)
 
-    #exit()
-   
-
-    #trains = db.find_all_trains()
-    #print(trains)
     train_names = [
         ('NJ 40424', "Berlin -> Paris", "nj-40424.html"), 
         ('NJ 40469', "Paris -> Berlin", "nj-40469.html")
     ]
 
-    output_path = './out'
     try:
         print("Creating output directory", output_path)
         os.makedirs(output_path)
