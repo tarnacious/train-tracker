@@ -28,10 +28,9 @@
           name = "train-tracker";
           runtimeInputs = [
             pkgs.python312
-            unstable.python312Packages.sqlmodel
             pkgs.python312Packages.requests
-            pkgs.python312Packages.jinja2
-            pkgs.python312Packages.pytest
+            unstable.python312Packages.sqlmodel
+            unstable.python312Packages.jinja2
           ];
           text = ''
             python3 ${mypkg}/run.py
@@ -40,14 +39,13 @@
     in {
       packages.${system} = {
         default = app;
-        myscript = app;
+        train-tracker = app;
       };
 
       devShells.${system}.default = pkgs.mkShell {
         buildInputs = [
           (pkgs.sqlite.override { interactive=true; })
           pkgs.python312
-          pkgs.python312Packages.virtualenv
           pkgs.python312Packages.requests
           unstable.python312Packages.sqlmodel
           unstable.python312Packages.jinja2
