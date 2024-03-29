@@ -50,7 +50,7 @@ def get_trains(train_name: str, db: Database) -> List[TrainChecks]:
                 train=check_list[0].train,
                 availability=sorted_dict
             ))
-        return trains
+        return sorted(trains, key=lambda train: train.train.depart)
 
 def train_info(trains: List[TrainChecks]) -> List[Availability]:
     availabilities: List[Availability] = []
