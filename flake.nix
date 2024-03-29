@@ -1,25 +1,59 @@
 {
-  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.05";
-  outputs = { self, nixpkgs }:
+  inputs = {
+    nixpkgs.url = "nixpkgs/nixos-23.11";
+    nixpkgs-unstable.url = "nixpkgs/master";
+  };
+
+  outputs = { self, ... }@inputs:
     let
       system = "x86_64-linux";
-      pkgs = import nixpkgs {
+      pkgs = import inputs.nixpkgs {
         inherit system;
       };
+      unstable = import inputs.nixpkgs-unstable {
+        inherit system;
+      };
+
+      app = let
+          mypkg = pkgs.stdenv.mkDerivation {
+            name = "mypkg";
+            src = self;
+            installPhase = ''
+              #echo "out", $out
+              mkdir -p $out/
+              cp -r ./* $out/
+            '';
+          };
+        in pkgs.writeShellApplication {
+          name = "train-tracker";
+          runtimeInputs = [
+            pkgs.python312
+            unstable.python312Packages.sqlmodel
+            pkgs.python312Packages.requests
+            pkgs.python312Packages.jinja2
+            pkgs.python312Packages.pytest
+          ];
+          text = ''
+            python3 ${mypkg}/run.py
+          '';
+        };
     in {
+      packages.${system} = {
+        default = app;
+        myscript = app;
+      };
+
       devShells.${system}.default = pkgs.mkShell {
         buildInputs = [
           (pkgs.sqlite.override { interactive=true; })
-          pkgs.python311
-          pkgs.python311Packages.virtualenv
-          pkgs.python311Packages.requests
+          pkgs.python312
+          pkgs.python312Packages.virtualenv
+          pkgs.python312Packages.requests
+          unstable.python312Packages.sqlmodel
+          unstable.python312Packages.jinja2
+          pkgs.python312Packages.pytest
+          #pkgs.python312Packages.mypy
         ];
-        shellHook = ''
-          if [ ! -e "./venv" ]; then
-            python -m venv ./venv
-          fi
-          . ./venv/bin/activate
-        '';
       };
     };
 }
