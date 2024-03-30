@@ -54,6 +54,13 @@ def run_import(from_station: int, to_station: int, date: datetime, db, limit=50)
 
 
 def run():
+    token_path = os.environ.get("TOKEN_PATH", "token.json")
+    try:
+        os.remove(token_path)
+    except OSError:
+        pass
+
+
     output_path = os.environ.get('HTML_PATH', "./out")
     database_path = os.environ.get('DATABASE_PATH', "trains.db")
     engine = create_engine(f"sqlite:///{database_path}")
