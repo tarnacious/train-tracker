@@ -1,4 +1,5 @@
 import json
+import os
 from dataclasses import asdict
 import requests
 from trains.models import Token
@@ -19,18 +20,18 @@ def request_token() -> Token:
        raise Exception(f"POST request failed with status code: {response.status_code}")
 
 def get_token() -> Token:
+    token_path = os.environ.get("TOKEN_PATH", "token.json")
     try:
-        with open('token.json', 'r') as file:
+        with open(token_path, 'r') as file:
             print("Found existing token")
             data = json.load(file)
             return Token(**data)
     except FileNotFoundError:
-        print("No token.json found, requesting a new token")
+        print("No token found, requesting a new token")
         token = request_token()
         print(token)
-        with open('token.json', 'w') as file:
+        with open(token_path, 'w') as file:
             token_json = json.dumps(asdict(token))
-            print("token json", token_json)
             file.write(token_json)
         return token
 
