@@ -107,43 +107,4 @@ def run():
     with open(filepath, 'w') as f:
         f.write(html)
         print("Written file", filepath)
-
-    return
-    with Session(db.engine) as session:
-        statement = """
-            select 
-                train.id as train_id, 
-                train.depart as departure, 
-                ticket.price as price, 
-                ticket.identifier as ticket_identifier,
-                ticket.ticket_type as ticket_type,
-                "check".created_at
-            from train 
-            join "check" on "check".train_id = train.id
-            join "ticket" on "ticket".check_id = "check".id
-            WHERE ("check".train_id, "check".created_at) IN (
-                SELECT train_id, MAX(created_at)
-                FROM "check"
-                GROUP BY train_id
-            )
-            order by train.id
-
-
-
-        """
-        results = session.execute(text(statement))
-        count = 0
-        for result in results:
-            [train_id, departure, price, identifier, ticket_type, fetched_at] = result
-            fetched_at = datetime.strptime(fetched_at, "%Y-%m-%d %H:%M:%S.%f")
-            departure = datetime.strptime(departure, "%Y-%m-%d %H:%M:%S.%f")
-            formatted_departure = departure.strftime("%Y-%m-%d")
-            formatted_price = "{:.2f}€".format(price) 
-            print(train_id, formatted_departure, identifier, formatted_price, format_relative_time(fetched_at))
-            count = count + 1
-
-        print(count)
-        
-
-
-
+    print("Completed successfully")

@@ -39,7 +39,7 @@ def get_train_checks(train: Train, db: Database) -> TrainChecks:
                 check=check,
                 ticket=ticket
             ))
-        print(f"Found {len(train_tickets)} train ticket")
+        #print(f"Found {len(train_tickets)} train ticket")
         
 
         ticket_identifers = set(list(map(lambda x: x.ticket.identifier, train_tickets)))
