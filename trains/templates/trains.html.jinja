@@ -60,10 +60,15 @@
     {% for train in trains %}
     <li>
         <div class="train-header">
+          <div>
           {{ train.train.train.depart.strftime('%Y-%m-%d %H:%M') }}
+          </div>
+
+          <div>
           {{ train.train.train.from_name }}
           to
           {{ train.train.train.to_name }}
+          </div>
         </div>
         {% if train.ticket_types.items()|length > 0 %}
           {% for key, availabilities in train.ticket_types.items() %}
