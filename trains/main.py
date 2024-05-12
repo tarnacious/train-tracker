@@ -61,16 +61,18 @@ def run():
         pass
 
 
+
     output_path = os.environ.get('HTML_PATH', "./out")
     database_path = os.environ.get('DATABASE_PATH', "trains.db")
     engine = create_engine(f"sqlite:///{database_path}")
     db = database.Database(engine)
 
-    # Paris -> Berlin
-    run_import(8796001, 8096003, datetime.now(), db, limit=50)
+    if os.environ.get("SKIP_IMPORT", "false") == "false":
+        # Paris -> Berlin
+        run_import(8796001, 8096003, datetime.now(), db, limit=50)
 
-    # Berlin -> Paris
-    run_import(8096003, 8796001, datetime.now(), db, limit=50)
+        # Berlin -> Paris
+        run_import(8096003, 8796001, datetime.now(), db, limit=50)
 
     train_names = [
         ('NJ 40424', "Berlin -> Paris", "nj-40424.html"), 
