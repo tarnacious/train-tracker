@@ -1,6 +1,11 @@
 <html>
-  <h1>index</h1>
-  {% for train, route, link in trains %}
-    <p><a href="{{ link }}">{{ train }} {{ route }}</a></p>
-  {% endfor %}
+  <head>
+    <meta name="viewport" content="width=device-width">
+  </head>
+  <body>
+    <h1>Train Tracker</h1>
+    {% for train, route, link in trains %}
+      <p><a href="{{ link }}">{{ train }} {{ route }}</a></p>
+    {% endfor %}
+  </body>
 </html>
