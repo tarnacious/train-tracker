@@ -12,6 +12,5 @@ def render_route(name: str, trains: List[Availability]) -> str:
 
 def render_routes(trains: list[tuple[str, str, str]]) -> str:
     template = env.get_template("index.html.jinja")
-    print(trains)
     return template.render(trains=trains)
     

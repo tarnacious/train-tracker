@@ -20,7 +20,7 @@ class Train(SQLModel, table=True):
     created_at: datetime = Field(default=datetime.utcnow(), nullable=False)
 
     def __str__(self) -> str:
-        return f"{self.depart} {self.train} {self.from_name} -> {self.to_name}"
+        return f"{self.id} {self.depart} {self.train} {self.from_name} -> {self.to_name}"
 
     @classmethod
     def from_model(cls, train: models.Train):
@@ -81,11 +81,13 @@ class AvailabilityInfo:
 class Availability: 
     train: Train
     ticket_types: dict[str, AvailabilityInfo]
+    last_checked: datetime | None
 
 @dataclass
 class TrainChecks:
     train: Train
     availability: dict[str, List[TicketPrice | None]]
+    last_check: Check | None
 
 
 class Database:

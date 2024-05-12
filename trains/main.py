@@ -10,7 +10,7 @@ from trains import models
 from sqlalchemy import text
 from trains.format import format_relative_time
 from trains.database import Check, CheckTickets, TicketPrice, Train, Ticket, TrainChecks, TrainTicketCheck
-from trains.data import get_trains, train_info
+from trains.data import get_trains, get_train_checks, train_info
 from trains.render import render_route, render_routes
 import re
 
@@ -83,7 +83,15 @@ def run():
     except FileExistsError:
         print("Output path already exists")
     for name, _, _ in train_names:
-        trains = get_trains(name, db)
+
+        all_trains = get_trains(name, db)
+        trains = []
+        for train in all_trains:
+            if not train.id: continue
+            trains.append(get_train_checks(train, db))
+
+        trains = sorted(trains, key=lambda train: train.train.depart_dt, reverse=True)
+
         train_data = train_info(trains)
         html = render_route(name, train_data)
         filename = slugify(name) + ".html"
