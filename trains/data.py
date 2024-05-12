@@ -73,17 +73,16 @@ def train_info(trains: List[TrainChecks]) -> List[Availability]:
             # do not include trains that do not have recent updates
             continue
         ticket_types = {}
-        for ticket_type, availability_ in train.availability.items():
-            availability: List[TicketPrice | None] = availability_ 
+        for ticket_type, ticket_prices in train.availability.items():
+            availability: List[TicketPrice] = sorted(
+                    filter(lambda ticket_price: ticket_price is not None, ticket_prices), 
+                    key=lambda ticket_price: ticket_price.date)
             ticket_price = availability[-1] if len(availability) > 0 else None
             if ticket_price is None or ticket_price.date < datetime.datetime.now() - datetime.timedelta(days=1):
                 ticket_price = TicketPrice(
                         date = datetime.datetime.now(),
                         price = None
                 )
-
-            #if price.date < datetime.datetime.now() - datetime.timedelta(days=1):
-            #    price = 1
 
             ticket_types[ticket_type] = AvailabilityInfo(
                         prices = availability,
